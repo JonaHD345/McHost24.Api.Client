@@ -1,5 +1,7 @@
 # McHost24.Api.Client
 
+[![NuGet Version](https://img.shields.io/nuget/v/McHost24.Api.Client.svg)](https://www.nuget.org/packages/McHost24.Api.Client/)
+
 A strongly typed .NET wrapper for the public API of [MC-HOST24](https://mc-host24.de/). Built with `.NET Standard 2.1`, this library provides a simple and convenient way to manage your servers, domains, tickets, and services directly from your C# application.
 
 ## Features
@@ -17,7 +19,7 @@ A strongly typed .NET wrapper for the public API of [MC-HOST24](https://mc-host2
 
 ## Installation
 
-Add the project reference to your application or install the package (once available on NuGet):
+Add the project reference to your application or install the package from [NuGet](https://www.nuget.org/packages/McHost24.Api.Client/):
 
 ```bash
 dotnet add package McHost24.Api.Client
