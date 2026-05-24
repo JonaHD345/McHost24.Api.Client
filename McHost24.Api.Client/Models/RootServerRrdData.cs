@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using System.Text.Json.Serialization;
+using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace McHost24.Api.Client
 {
@@ -11,49 +11,50 @@ namespace McHost24.Api.Client
     /// <summary>
     /// Gets or sets the metric timestamps.
     /// </summary>
-    [JsonPropertyName("time")]
+    [JsonProperty("time")]
     public List<string>? Time { get; set; }
 
     /// <summary>
     /// Gets or sets CPU metric values.
     /// </summary>
-    [JsonPropertyName("cpu")]
+    [JsonProperty("cpu")]
     public List<double>? Cpu { get; set; }
 
     /// <summary>
     /// Gets or sets memory metric values.
     /// </summary>
-    [JsonPropertyName("mem")]
+    [JsonProperty("mem")]
     public List<double>? Memory { get; set; }
 
     /// <summary>
     /// Gets or sets disk read metric values.
     /// </summary>
-    [JsonPropertyName("diskread")]
+    [JsonProperty("diskread")]
     public List<double>? DiskRead { get; set; }
 
     /// <summary>
     /// Gets or sets disk write metric values.
     /// </summary>
-    [JsonPropertyName("diskwrite")]
+    [JsonProperty("diskwrite")]
     public List<double>? DiskWrite { get; set; }
 
     /// <summary>
     /// Gets or sets incoming network metric values.
     /// </summary>
-    [JsonPropertyName("netin")]
+    [JsonProperty("netin")]
     public List<double>? NetIn { get; set; }
 
     /// <summary>
     /// Gets or sets outgoing network metric values.
     /// </summary>
-    [JsonPropertyName("netout")]
+    [JsonProperty("netout")]
     public List<double>? NetOut { get; set; }
 
     /// <summary>
     /// Gets or sets the maximum memory value.
     /// </summary>
-    [JsonPropertyName("maxmem")]
+    [JsonProperty("maxmem")]
     public double? MaxMemory { get; set; }
   }
 }
+

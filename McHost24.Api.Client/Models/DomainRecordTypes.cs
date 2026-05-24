@@ -1,4 +1,4 @@
-﻿namespace McHost24.Api.Client
+namespace McHost24.Api.Client
 {
   /// <summary>
   /// Provides constants for supported domain record types.
@@ -66,3 +66,4 @@
     public const string HttpsHeader = "HTTPS_H";
   }
 }
+

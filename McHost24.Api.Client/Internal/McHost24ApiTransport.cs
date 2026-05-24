@@ -1,9 +1,9 @@
-﻿using System;
+using System;
 using System.Globalization;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
-using System.Text.Json;
+using Newtonsoft.Json;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -12,7 +12,7 @@ namespace McHost24.Api.Client
   internal sealed class McHost24ApiTransport : IDisposable
   {
     private readonly HttpClient _httpClient;
-    private readonly JsonSerializerOptions _jsonSerializerOptions;
+    private readonly JsonSerializerSettings _jsonSerializerSettings;
     private readonly bool _disposeHttpClient;
     private bool _disposed;
 
@@ -30,7 +30,7 @@ namespace McHost24.Api.Client
 
       _httpClient = httpClient;
       _disposeHttpClient = disposeHttpClient;
-      _jsonSerializerOptions = McHost24JsonSerializerOptions.Create(options.JsonSerializerOptions);
+      _jsonSerializerSettings = McHost24JsonSerializerSettings.Create(options.JsonSerializerSettings);
 
       if (_httpClient.BaseAddress == null)
       {
@@ -88,7 +88,7 @@ namespace McHost24.Api.Client
 
         if (requestBody != null)
         {
-          var json = JsonSerializer.Serialize(requestBody, _jsonSerializerOptions);
+          var json = JsonConvert.SerializeObject(requestBody, _jsonSerializerSettings);
           request.Content = new StringContent(json, Encoding.UTF8, "application/json");
         }
 
@@ -113,7 +113,7 @@ namespace McHost24.Api.Client
 
           try
           {
-            var result = JsonSerializer.Deserialize<TResponse>(responseContent, _jsonSerializerOptions);
+            var result = JsonConvert.DeserializeObject<TResponse>(responseContent, _jsonSerializerSettings);
 
             if (result == null)
             {

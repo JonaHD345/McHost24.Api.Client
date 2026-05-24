@@ -1,32 +1,27 @@
-﻿using System;
+using System;
 using System.Globalization;
-using System.Text.Json;
-using System.Text.Json.Serialization;
+using Newtonsoft.Json;
 
 namespace McHost24.Api.Client
 {
   internal sealed class FlexibleBooleanJsonConverter : JsonConverter<bool>
   {
-    public override bool Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+    public override bool ReadJson(JsonReader reader, Type objectType, bool existingValue, bool hasExistingValue, JsonSerializer serializer)
     {
-      if (reader.TokenType == JsonTokenType.True)
+      if (reader.TokenType == JsonToken.Boolean)
       {
-        return true;
+        return (bool)reader.Value!;
       }
 
-      if (reader.TokenType == JsonTokenType.False)
+      if (reader.TokenType == JsonToken.Integer)
       {
-        return false;
+        var numericValue = Convert.ToInt64(reader.Value, CultureInfo.InvariantCulture);
+        return numericValue != 0;
       }
 
-      if (reader.TokenType == JsonTokenType.Number && reader.TryGetInt64(out var number))
+      if (reader.TokenType == JsonToken.String)
       {
-        return number != 0;
-      }
-
-      if (reader.TokenType == JsonTokenType.String)
-      {
-        var value = reader.GetString();
+        var value = reader.Value?.ToString();
 
         if (bool.TryParse(value, out var boolValue))
         {
@@ -39,12 +34,12 @@ namespace McHost24.Api.Client
         }
       }
 
-      throw new JsonException("The JSON value could not be converted to a Boolean.");
+      throw new JsonSerializationException("The JSON value could not be converted to a Boolean.");
     }
 
-    public override void Write(Utf8JsonWriter writer, bool value, JsonSerializerOptions options)
+    public override void WriteJson(JsonWriter writer, bool value, JsonSerializer serializer)
     {
-      writer.WriteBooleanValue(value);
+      writer.WriteValue(value);
     }
   }
 }

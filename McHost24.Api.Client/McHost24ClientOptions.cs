@@ -1,5 +1,5 @@
-﻿using System;
-using System.Text.Json;
+using System;
+using Newtonsoft.Json;
 
 namespace McHost24.Api.Client
 {
@@ -24,8 +24,8 @@ namespace McHost24.Api.Client
     public string? ApiToken { get; set; }
 
     /// <summary>
-    /// Gets or sets custom JSON serializer options.
+    /// Gets or sets custom JSON serializer settings.
     /// </summary>
-    public JsonSerializerOptions? JsonSerializerOptions { get; set; }
+    public JsonSerializerSettings? JsonSerializerSettings { get; set; }
   }
 }

@@ -1,4 +1,4 @@
-﻿using System.Text.Json.Serialization;
+using Newtonsoft.Json;
 
 namespace McHost24.Api.Client
 {
@@ -10,19 +10,20 @@ namespace McHost24.Api.Client
     /// <summary>
     /// Gets or sets the account username.
     /// </summary>
-    [JsonPropertyName("username")]
+    [JsonProperty("username")]
     public string? Username { get; set; }
 
     /// <summary>
     /// Gets or sets the account password.
     /// </summary>
-    [JsonPropertyName("password")]
+    [JsonProperty("password")]
     public string? Password { get; set; }
 
     /// <summary>
     /// Gets or sets the optional two-factor authentication code.
     /// </summary>
-    [JsonPropertyName("tfa")]
+    [JsonProperty("tfa")]
     public int? Tfa { get; set; }
   }
 }
+

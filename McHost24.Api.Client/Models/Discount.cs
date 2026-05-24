@@ -1,5 +1,5 @@
-﻿using System;
-using System.Text.Json.Serialization;
+using System;
+using Newtonsoft.Json;
 
 namespace McHost24.Api.Client
 {
@@ -11,37 +11,38 @@ namespace McHost24.Api.Client
     /// <summary>
     /// Gets or sets the discount database id.
     /// </summary>
-    [JsonPropertyName("id")]
+    [JsonProperty("id")]
     public int? Id { get; set; }
 
     /// <summary>
     /// Gets or sets the discount percentage.
     /// </summary>
-    [JsonPropertyName("discount_percent")]
+    [JsonProperty("discount_percent")]
     public int? DiscountPercent { get; set; }
 
     /// <summary>
     /// Gets or sets the discount scope type.
     /// </summary>
-    [JsonPropertyName("type")]
+    [JsonProperty("type")]
     public string? Type { get; set; }
 
     /// <summary>
     /// Gets or sets the discount start timestamp.
     /// </summary>
-    [JsonPropertyName("start_at")]
+    [JsonProperty("start_at")]
     public DateTimeOffset? StartAt { get; set; }
 
     /// <summary>
     /// Gets or sets the discount end timestamp.
     /// </summary>
-    [JsonPropertyName("end_at")]
+    [JsonProperty("end_at")]
     public DateTimeOffset? EndAt { get; set; }
 
     /// <summary>
     /// Gets or sets the discount calculation type.
     /// </summary>
-    [JsonPropertyName("discount_type")]
+    [JsonProperty("discount_type")]
     public string? DiscountType { get; set; }
   }
 }
+

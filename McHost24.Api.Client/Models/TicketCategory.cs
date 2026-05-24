@@ -1,4 +1,4 @@
-﻿using System.Text.Json.Serialization;
+using Newtonsoft.Json;
 
 namespace McHost24.Api.Client
 {
@@ -10,25 +10,26 @@ namespace McHost24.Api.Client
     /// <summary>
     /// Gets or sets the ticket category database id.
     /// </summary>
-    [JsonPropertyName("id")]
+    [JsonProperty("id")]
     public int? Id { get; set; }
 
     /// <summary>
     /// Gets or sets the category title.
     /// </summary>
-    [JsonPropertyName("title")]
+    [JsonProperty("title")]
     public string? Title { get; set; }
 
     /// <summary>
     /// Gets or sets the category description.
     /// </summary>
-    [JsonPropertyName("description")]
+    [JsonProperty("description")]
     public string? Description { get; set; }
 
     /// <summary>
     /// Gets or sets the category icon.
     /// </summary>
-    [JsonPropertyName("icon")]
+    [JsonProperty("icon")]
     public string? Icon { get; set; }
   }
 }
+

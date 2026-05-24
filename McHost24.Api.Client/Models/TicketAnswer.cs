@@ -1,5 +1,5 @@
-﻿using System;
-using System.Text.Json.Serialization;
+using System;
+using Newtonsoft.Json;
 
 namespace McHost24.Api.Client
 {
@@ -11,43 +11,44 @@ namespace McHost24.Api.Client
     /// <summary>
     /// Gets or sets the answer database id.
     /// </summary>
-    [JsonPropertyName("id")]
+    [JsonProperty("id")]
     public int? Id { get; set; }
 
     /// <summary>
     /// Gets or sets the referenced ticket database id.
     /// </summary>
-    [JsonPropertyName("ticket_id")]
+    [JsonProperty("ticket_id")]
     public int? TicketId { get; set; }
 
     /// <summary>
     /// Gets or sets the answer message.
     /// </summary>
-    [JsonPropertyName("msg")]
+    [JsonProperty("msg")]
     public string? Message { get; set; }
 
     /// <summary>
     /// Gets or sets the replying user id.
     /// </summary>
-    [JsonPropertyName("user_id")]
+    [JsonProperty("user_id")]
     public int? UserId { get; set; }
 
     /// <summary>
     /// Gets or sets the replying collaborator id.
     /// </summary>
-    [JsonPropertyName("col_id")]
+    [JsonProperty("col_id")]
     public int? CollaboratorId { get; set; }
 
     /// <summary>
     /// Gets or sets the answer creation timestamp.
     /// </summary>
-    [JsonPropertyName("created_at")]
+    [JsonProperty("created_at")]
     public DateTimeOffset? CreatedAt { get; set; }
 
     /// <summary>
     /// Gets or sets the answer update timestamp.
     /// </summary>
-    [JsonPropertyName("updated_at")]
+    [JsonProperty("updated_at")]
     public DateTimeOffset? UpdatedAt { get; set; }
   }
 }
+

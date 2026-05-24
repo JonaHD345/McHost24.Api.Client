@@ -1,4 +1,4 @@
-﻿using System.Text.Json.Serialization;
+using Newtonsoft.Json;
 
 namespace McHost24.Api.Client
 {
@@ -10,7 +10,8 @@ namespace McHost24.Api.Client
     /// <summary>
     /// Gets or sets the reply message.
     /// </summary>
-    [JsonPropertyName("reply")]
+    [JsonProperty("reply")]
     public string? Reply { get; set; }
   }
 }
+

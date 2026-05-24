@@ -1,4 +1,4 @@
-﻿namespace McHost24.Api.Client
+namespace McHost24.Api.Client
 {
   /// <summary>
   /// Provides constants for Minecraft server backup statuses.
@@ -16,3 +16,4 @@
     public const string Running = "running";
   }
 }
+

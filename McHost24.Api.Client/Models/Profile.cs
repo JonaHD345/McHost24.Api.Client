@@ -1,4 +1,4 @@
-﻿using System.Text.Json.Serialization;
+using Newtonsoft.Json;
 
 namespace McHost24.Api.Client
 {
@@ -10,37 +10,38 @@ namespace McHost24.Api.Client
     /// <summary>
     /// Gets or sets the MC-HOST24 database id.
     /// </summary>
-    [JsonPropertyName("id")]
+    [JsonProperty("id")]
     public int? Id { get; set; }
 
     /// <summary>
     /// Gets or sets the account name.
     /// </summary>
-    [JsonPropertyName("name")]
+    [JsonProperty("name")]
     public string? Name { get; set; }
 
     /// <summary>
     /// Gets or sets the real account name.
     /// </summary>
-    [JsonPropertyName("rname")]
+    [JsonProperty("rname")]
     public string? RealName { get; set; }
 
     /// <summary>
     /// Gets or sets the account email address.
     /// </summary>
-    [JsonPropertyName("email")]
+    [JsonProperty("email")]
     public string? Email { get; set; }
 
     /// <summary>
     /// Gets or sets the current account balance.
     /// </summary>
-    [JsonPropertyName("money")]
+    [JsonProperty("money")]
     public decimal? Money { get; set; }
 
     /// <summary>
     /// Gets or sets the donation URL.
     /// </summary>
-    [JsonPropertyName("donation_url")]
+    [JsonProperty("donation_url")]
     public string? DonationUrl { get; set; }
   }
 }
+

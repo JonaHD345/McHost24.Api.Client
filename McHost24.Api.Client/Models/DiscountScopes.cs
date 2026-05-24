@@ -1,4 +1,4 @@
-﻿namespace McHost24.Api.Client
+namespace McHost24.Api.Client
 {
   /// <summary>
   /// Provides constants for discount scopes.
@@ -21,3 +21,4 @@
     public const string Upgrade = "UPGRADE";
   }
 }
+

@@ -243,7 +243,7 @@ var options = new McHost24ClientOptions
 {
     ApiToken = "your-persistent-token",
     BaseAddress = new Uri("https://mc-host24.de/api/v1/"), // Default value
-    JsonSerializerOptions = new JsonSerializerOptions { /* Custom JSON configuration */ }
+    JsonSerializerSettings = new JsonSerializerSettings { /* Custom JSON settings */ }
 };
 
 // Instantiate with a custom HttpClient and options

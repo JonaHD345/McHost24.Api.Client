@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
-using System.Text.Json;
-using System.Text.Json.Serialization;
+using System.Collections.Generic;
+using Newtonsoft.Json.Linq;
+using Newtonsoft.Json;
 
 namespace McHost24.Api.Client
 {
@@ -12,8 +12,8 @@ namespace McHost24.Api.Client
     /// <summary>
     /// Gets or sets the raw response data.
     /// </summary>
-    [JsonPropertyName("data")]
-    public JsonElement? Data { get; set; }
+    [JsonProperty("data")]
+    public JToken? Data { get; set; }
   }
 
   /// <summary>
@@ -25,7 +25,7 @@ namespace McHost24.Api.Client
     /// <summary>
     /// Gets or sets the typed response data.
     /// </summary>
-    [JsonPropertyName("data")]
+    [JsonProperty("data")]
     public TData? Data { get; set; }
   }
 
@@ -37,37 +37,37 @@ namespace McHost24.Api.Client
     /// <summary>
     /// Gets or sets the API status text.
     /// </summary>
-    [JsonPropertyName("status")]
+    [JsonProperty("status")]
     public string? Status { get; set; }
 
     /// <summary>
     /// Gets or sets translated response metadata.
     /// </summary>
-    [JsonPropertyName("meta")]
+    [JsonProperty("meta")]
     public ApiResponseMeta? Meta { get; set; }
 
     /// <summary>
     /// Gets or sets a value indicating whether the request was executed correctly.
     /// </summary>
-    [JsonPropertyName("success")]
+    [JsonProperty("success")]
     public bool Success { get; set; }
 
     /// <summary>
     /// Gets or sets all messages returned by the API.
     /// </summary>
-    [JsonPropertyName("messages")]
+    [JsonProperty("messages")]
     public List<string>? Messages { get; set; }
 
     /// <summary>
     /// Gets or sets a value indicating whether datatables should be reloaded.
     /// </summary>
-    [JsonPropertyName("reload_datatables")]
+    [JsonProperty("reload_datatables")]
     public bool ReloadDatatables { get; set; }
 
     /// <summary>
     /// Gets or sets a value indicating whether the site should be reloaded.
     /// </summary>
-    [JsonPropertyName("reload")]
+    [JsonProperty("reload")]
     public bool Reload { get; set; }
   }
 
@@ -79,19 +79,20 @@ namespace McHost24.Api.Client
     /// <summary>
     /// Gets or sets warning messages.
     /// </summary>
-    [JsonPropertyName("warnings")]
+    [JsonProperty("warnings")]
     public List<string>? Warnings { get; set; }
 
     /// <summary>
     /// Gets or sets error messages.
     /// </summary>
-    [JsonPropertyName("errors")]
+    [JsonProperty("errors")]
     public List<string>? Errors { get; set; }
 
     /// <summary>
     /// Gets or sets success messages.
     /// </summary>
-    [JsonPropertyName("success")]
+    [JsonProperty("success")]
     public List<string>? Success { get; set; }
   }
 }
+

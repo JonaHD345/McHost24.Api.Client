@@ -1,4 +1,4 @@
-﻿namespace McHost24.Api.Client
+namespace McHost24.Api.Client
 {
   /// <summary>
   /// Provides constants for service types.
@@ -41,3 +41,4 @@
     public const string SinusBot = "sinusbot";
   }
 }
+

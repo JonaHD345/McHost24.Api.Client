@@ -1,4 +1,4 @@
-﻿using System.Text.Json.Serialization;
+using Newtonsoft.Json;
 
 namespace McHost24.Api.Client
 {
@@ -10,37 +10,38 @@ namespace McHost24.Api.Client
     /// <summary>
     /// Gets or sets the current backup status.
     /// </summary>
-    [JsonPropertyName("status")]
+    [JsonProperty("status")]
     public string? Status { get; set; }
 
     /// <summary>
     /// Gets or sets the backup timestamp with nanoseconds.
     /// </summary>
-    [JsonPropertyName("time")]
+    [JsonProperty("time")]
     public string? Time { get; set; }
 
     /// <summary>
     /// Gets or sets the backup message.
     /// </summary>
-    [JsonPropertyName("message")]
+    [JsonProperty("message")]
     public string? Message { get; set; }
 
     /// <summary>
     /// Gets or sets the backup archive file name.
     /// </summary>
-    [JsonPropertyName("file")]
+    [JsonProperty("file")]
     public string? File { get; set; }
 
     /// <summary>
     /// Gets or sets the FTP endpoint.
     /// </summary>
-    [JsonPropertyName("ftp")]
+    [JsonProperty("ftp")]
     public string? Ftp { get; set; }
 
     /// <summary>
     /// Gets or sets the backup type.
     /// </summary>
-    [JsonPropertyName("type")]
+    [JsonProperty("type")]
     public string? Type { get; set; }
   }
 }
+

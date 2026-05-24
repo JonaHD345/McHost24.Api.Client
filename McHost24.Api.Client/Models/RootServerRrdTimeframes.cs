@@ -1,4 +1,4 @@
-﻿namespace McHost24.Api.Client
+namespace McHost24.Api.Client
 {
   /// <summary>
   /// Provides constants for root server RRD timeframes.
@@ -31,3 +31,4 @@
     public const string Year = "year";
   }
 }
+

@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using System.Text.Json.Serialization;
+using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace McHost24.Api.Client
 {
@@ -11,13 +11,13 @@ namespace McHost24.Api.Client
     /// <summary>
     /// Gets or sets available renew runtimes.
     /// </summary>
-    [JsonPropertyName("runtimes")]
+    [JsonProperty("runtimes")]
     public List<ServiceRuntimePrice>? Runtimes { get; set; }
 
     /// <summary>
     /// Gets or sets the active discount.
     /// </summary>
-    [JsonPropertyName("discount")]
+    [JsonProperty("discount")]
     public Discount? Discount { get; set; }
   }
 
@@ -29,13 +29,14 @@ namespace McHost24.Api.Client
     /// <summary>
     /// Gets or sets the renew runtime.
     /// </summary>
-    [JsonPropertyName("runtime")]
+    [JsonProperty("runtime")]
     public string? Runtime { get; set; }
 
     /// <summary>
     /// Gets or sets the renew price.
     /// </summary>
-    [JsonPropertyName("price")]
+    [JsonProperty("price")]
     public decimal? Price { get; set; }
   }
 }
+

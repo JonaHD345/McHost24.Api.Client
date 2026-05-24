@@ -1,4 +1,4 @@
-﻿using System.Text.Json.Serialization;
+using Newtonsoft.Json;
 
 namespace McHost24.Api.Client
 {
@@ -10,13 +10,14 @@ namespace McHost24.Api.Client
     /// <summary>
     /// Gets or sets the IPv4 address.
     /// </summary>
-    [JsonPropertyName("ip")]
+    [JsonProperty("ip")]
     public string? Ip { get; set; }
 
     /// <summary>
     /// Gets or sets the reverse DNS value.
     /// </summary>
-    [JsonPropertyName("rdns")]
+    [JsonProperty("rdns")]
     public string? Rdns { get; set; }
   }
 }
+

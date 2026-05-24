@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using System.Text.Json.Serialization;
+using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace McHost24.Api.Client
 {
@@ -11,19 +11,20 @@ namespace McHost24.Api.Client
     /// <summary>
     /// Gets or sets the domain.
     /// </summary>
-    [JsonPropertyName("domain")]
+    [JsonProperty("domain")]
     public Domain? Domain { get; set; }
 
     /// <summary>
     /// Gets or sets the DNS records.
     /// </summary>
-    [JsonPropertyName("records")]
+    [JsonProperty("records")]
     public List<DomainRecord>? Records { get; set; }
 
     /// <summary>
     /// Gets or sets the domain email entries.
     /// </summary>
-    [JsonPropertyName("emails")]
+    [JsonProperty("emails")]
     public List<DomainEmail>? Emails { get; set; }
   }
 }
+

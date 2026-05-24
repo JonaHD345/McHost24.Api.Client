@@ -1,4 +1,4 @@
-﻿using System.Text.Json.Serialization;
+using Newtonsoft.Json;
 
 namespace McHost24.Api.Client
 {
@@ -10,7 +10,8 @@ namespace McHost24.Api.Client
     /// <summary>
     /// Gets or sets the generated API token.
     /// </summary>
-    [JsonPropertyName("api_token")]
+    [JsonProperty("api_token")]
     public string? ApiToken { get; set; }
   }
 }
+

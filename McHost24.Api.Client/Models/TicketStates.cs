@@ -1,4 +1,4 @@
-﻿namespace McHost24.Api.Client
+namespace McHost24.Api.Client
 {
   /// <summary>
   /// Provides constants for ticket states.
@@ -16,3 +16,4 @@
     public const string Opened = "OPENED";
   }
 }
+

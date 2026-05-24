@@ -1,4 +1,4 @@
-﻿using System.Text.Json.Serialization;
+using Newtonsoft.Json;
 
 namespace McHost24.Api.Client
 {
@@ -10,37 +10,38 @@ namespace McHost24.Api.Client
     /// <summary>
     /// Gets or sets the TeamSpeak server name.
     /// </summary>
-    [JsonPropertyName("servername")]
+    [JsonProperty("servername")]
     public string? ServerName { get; set; }
 
     /// <summary>
     /// Gets or sets the TeamSpeak server address.
     /// </summary>
-    [JsonPropertyName("ip_address")]
+    [JsonProperty("ip_address")]
     public string? IpAddress { get; set; }
 
     /// <summary>
     /// Gets or sets the TeamSpeak server port.
     /// </summary>
-    [JsonPropertyName("port")]
+    [JsonProperty("port")]
     public int? Port { get; set; }
 
     /// <summary>
     /// Gets or sets the maximum usable slots.
     /// </summary>
-    [JsonPropertyName("slots")]
+    [JsonProperty("slots")]
     public int? Slots { get; set; }
 
     /// <summary>
     /// Gets or sets the currently connected clients.
     /// </summary>
-    [JsonPropertyName("current_slots")]
+    [JsonProperty("current_slots")]
     public int? CurrentSlots { get; set; }
 
     /// <summary>
     /// Gets or sets a value indicating whether the server is online.
     /// </summary>
-    [JsonPropertyName("online")]
+    [JsonProperty("online")]
     public bool Online { get; set; }
   }
 }
+

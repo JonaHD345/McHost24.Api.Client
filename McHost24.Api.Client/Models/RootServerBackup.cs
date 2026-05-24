@@ -1,4 +1,4 @@
-﻿using System.Text.Json.Serialization;
+using Newtonsoft.Json;
 
 namespace McHost24.Api.Client
 {
@@ -10,19 +10,20 @@ namespace McHost24.Api.Client
     /// <summary>
     /// Gets or sets the backup database id.
     /// </summary>
-    [JsonPropertyName("id")]
+    [JsonProperty("id")]
     public int? Id { get; set; }
 
     /// <summary>
     /// Gets or sets the backup creation timestamp.
     /// </summary>
-    [JsonPropertyName("created_at")]
+    [JsonProperty("created_at")]
     public double? CreatedAt { get; set; }
 
     /// <summary>
     /// Gets or sets a value indicating whether the backup finished.
     /// </summary>
-    [JsonPropertyName("finished")]
+    [JsonProperty("finished")]
     public bool Finished { get; set; }
   }
 }
+
