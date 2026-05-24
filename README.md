@@ -300,4 +300,4 @@ This project is licensed under the **MIT License**. See the LICENSE.txt file for
 
 ## Disclaimer
 
-This is an unofficial .NET wrapper for the MC-HOST24 API. The project is not affiliated with MC-HOST24 GmbH. All brand names and logos are property of their respective owners.
+This is an unofficial .NET wrapper for the MC-HOST24 API. The project is not affiliated with Gericke KG (MC-HOST24.de is a label of Gericke KG). All brand names and logos are property of their respective owners.
