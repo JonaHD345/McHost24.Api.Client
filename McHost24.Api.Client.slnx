@@ -1,4 +1,5 @@
-﻿<Solution>
+<Solution>
   <Project Path="McHost24.Api.Client/McHost24.Api.Client.csproj" />
+  <Project Path="McHost24.Api.Client.Example/McHost24.Api.Client.Example.csproj" Id="4d8f696d-ee96-4fe1-ac11-80f16f2bd2d8" />
   <Project Path="McHost24.Api.Client.Tests/McHost24.Api.Client.Tests.csproj" />
 </Solution>
