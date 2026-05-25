@@ -38,6 +38,23 @@ namespace McHost24.Api.Client.Tests
     }
 
     [Fact]
+    public async Task GetAllAsync_WithSystemUserId_DeserializesUserIdAsNull()
+    {
+      // Arrange
+      using var context = ClientTestHost.CreateClient();
+      context.Handler.EnqueueJson(ClientTestHost.ApiResponseJson("[{\"id\":12,\"user_id\":\"SYSTEM\"}]"));
+
+      // Act
+      var response = await context.Client.Tickets.GetAllAsync();
+
+      // Assert
+      var ticket = Assert.Single(response.Data!);
+      Assert.Equal(12, ticket.Id);
+      Assert.Null(ticket.UserId);
+      context.Handler.AssertSingleRequest(HttpMethod.Get, "support/tickets");
+    }
+
+    [Fact]
     public async Task CreateAsync_WithValues_SendsExpectedRequest()
     {
       // Arrange
@@ -135,6 +152,24 @@ namespace McHost24.Api.Client.Tests
       // Assert
       var ticket = Assert.Single(response.Data!);
       Assert.Equal("Subject", ticket.Betr);
+      context.Handler.AssertSingleRequest(HttpMethod.Get, "support/tickets/12");
+    }
+
+    [Fact]
+    public async Task GetAsync_WithSystemAnswerUserId_DeserializesAnswerUserIdAsNull()
+    {
+      // Arrange
+      using var context = ClientTestHost.CreateClient();
+      context.Handler.EnqueueJson(ClientTestHost.ApiResponseJson("[{\"id\":12,\"answers\":[{\"id\":44,\"user_id\":\"SYSTEM\"}]}]"));
+
+      // Act
+      var response = await context.Client.Tickets.GetAsync(12);
+
+      // Assert
+      var ticket = Assert.Single(response.Data!);
+      var answer = Assert.Single(ticket.Answers!);
+      Assert.Equal(44, answer.Id);
+      Assert.Null(answer.UserId);
       context.Handler.AssertSingleRequest(HttpMethod.Get, "support/tickets/12");
     }
 

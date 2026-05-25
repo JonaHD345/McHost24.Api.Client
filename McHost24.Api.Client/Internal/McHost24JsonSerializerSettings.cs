@@ -1,4 +1,4 @@
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace McHost24.Api.Client
 {
@@ -14,6 +14,7 @@ namespace McHost24.Api.Client
 
       AddConverterIfMissing(settings, new FlexibleBooleanJsonConverter());
       AddConverterIfMissing(settings, new FlexibleDateTimeOffsetJsonConverter());
+      AddConverterIfMissing(settings, new FlexibleNullableIntegerJsonConverter());
       AddConverterIfMissing(settings, new SingleOrArrayJsonConverter());
 
       return settings;
